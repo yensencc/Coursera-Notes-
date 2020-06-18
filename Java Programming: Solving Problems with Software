@@ -1,0 +1,110 @@
+Variable decorations
+
+variable initialiation vs devoration
+
+Mathematical expressions
+
+int x = 2;
+int y = x * 3 = 6
+int z = y / 2; = 3
+x = (2 + z) % 2; 5 % 2
+
+
+function calls
+
+Java has methods not functions
+
+call site
+
+Object = Data + Code
+
+What is the difference between call and invoke ?
+
+Explicit cast
+implicity
+
+
+
+public class Point {
+	private int x;
+	private int y;
+
+	public Point(int startx, int starty){
+		x = startx;
+		y = starty;
+	}
+	
+	public int getX() {return x;}
+	public int getY() {return y;}
+	public double distance (Point otherPt){
+		int dx = x - otherPt.getX();
+		int dy = y - otherPt.getY();
+		return Math.sqrt(dx * dx + dy  * dy); 
+	}
+	public static void main(string[] args){
+		Point p1 = new Point(3,4);
+		Point p2 = new Point(6,8);
+		System.out.println(p1.distance(p2));
+	}
+}
+
+
+Primitive vs objects
+
+Primitives: int, double, char, boolean, float, long, byte, short
+
+public class Thing {
+  
+  private int a;
+  
+  public Thing(int x) {
+    a = x;
+  }
+  
+  public int geta() {
+    return a ;
+  }
+  
+  public void combine (Thing y) {
+    a = a + y.geta();
+  }
+}
+
+
+
+
+//////////////////// PerimeterRunner class ///////////
+
+
+import edu.duke.*;
+
+public class PerimeterRunner{
+	public double getPerimeter (Shape s){
+		//Start with totalPerim = 0
+		double totalPerim = 0
+		//Start with prevPt = the last point
+		Point prevPt = s.getLastPoint();
+		//For each point currPt in the shape,
+		for(Point currPt: shape.getPoints()){
+			//Find distance from prePt to currPt
+			double currDist = prevPt.distance(currPt);
+			//Update totalPerim to be totalPerim + currPt
+			totalPerim = totalPerim + currDist;
+			//Update prevPt to be currPt
+			prevPt = currPt;
+		}
+		//totalPerim is my answer
+		
+	}
+	public void testPerimeter(){
+		FileResource fr = new FileResource();
+		Shape s = new Shape(fr);
+		double length = getPerimeter(s);
+		System.out.println("perimeter = " + length);
+	}
+
+	public static void main (String[] args){
+		PerimeterRunner pr = new PerimeterRunner();
+		pr.testPerimeter();
+	}
+}

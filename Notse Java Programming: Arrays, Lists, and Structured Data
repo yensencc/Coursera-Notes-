@@ -1,0 +1,31 @@
+
+Modern cryptography: https
+RSA or ECDHE_RSA
+AES or AES_128_GCM
+StringBuilder sb = new StringBuilder("Hello");
+sb.append("World");
+sb.insert(5, "Around The");
+
+Clasical cruptography
+
+Ceaser Cipher
+Vigenere Cipher
+
+
+
+public String reverse(String s){
+	String ret = "";
+	for( int k=0; k < s.length(); k += 1){
+		ret = s.charAt(k) + ret;
+	}
+}
+
+public String reverse(String s){
+	String ret = "";
+	int k=0;
+	while (k < s.length()){
+		ret = s.charAt(k) + ret;
+		k + = 1
+	}
+}
+
