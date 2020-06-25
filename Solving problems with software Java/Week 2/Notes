@@ -1,0 +1,9 @@
+Developing an algorithm
+
+DNA Concepts
+
+Nucleotide = char
+Codon = three chars
+Start codong = "ATG"
+Stop codon = "TAA"
+
