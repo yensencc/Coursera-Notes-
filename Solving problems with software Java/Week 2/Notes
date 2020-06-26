@@ -7,3 +7,25 @@ Codon = three chars
 Start codong = "ATG"
 Stop codon = "TAA"
 
+
+
+
+// find gene dna with loops
+public String findGene(String dna){
+ // Find first ocurrence of "ATG" call its index "startIndex"
+int startIndex = dna.indexOf("ATG");
+// Find the "TAA" starting from 
+(startIndex + 3), call this "currIndex"
+currIndex = dna.indexOf(startIndex + 3);
+
+// As long as currIndex is not equal to -1
+while(currIndex != -1){
+	if((currIndex - startwIndex) % 3 == 0){
+		return dna.substring(startIndex, currIndex + 3);
+	}
+	else{
+		currIndex = dna.indexOf("TAA",currIndex + 1)
+	}
+
+	return "";
+}
