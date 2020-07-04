@@ -1,0 +1,51 @@
+Integer.parseInt("2");
+
+Double.parseDouble("23.4");
+
+
+Maximun temperature: developing an algorithm
+
+1- Looked at first row, "TemperatureF" column
+2 Noted that first row has largest for far
+3- looked at second row, "TemperatureF" column
+4- 30 degress was not larger than largest so far(30)
+
+
+import edu.duke.*;
+import org.apache.commons.csv.*;
+import java.io.*;
+
+public class CSVMax {
+//Start with largestSoFar as nothing
+	CSVRecord largestSoFar = null;
+//For each row(currentRow) in the CSV File
+	for(CSVRecord currentRow : parser){
+			//if largestSoFar is nothing
+		if(largestSofar == null){
+			largestSoFar = currentRow;
+		}else{
+			double currentTemp = Double.parseDouble(currentRow.get("TemperatureF"));
+			double largestTemp = Double.parseDouble(largestSoFar.get("TemperatureF"));
+			//update largestSoFar to be currentRow
+			//otherwise
+			//Check if currentRow's temperature > largestSoFar's\
+			if(currentTemp > largestTemp){
+				//if so update largestSoFar to currentRow
+				largestSofar = currentRow;
+			}
+			
+		}
+
+	}
+
+//The largestSofar is the answer
+return largestSoFar
+
+}
+
+public void testHottestInDay(){
+	FileResource fr = new FileResource("rootoffile");
+	CSVRecord largest = hottestHourInFile(fr.getCSVParser());
+	System.out.println("hottest temperature was " + largest.get("Temperature") + " at " + largest.get("TimeEST"));
+}
+
