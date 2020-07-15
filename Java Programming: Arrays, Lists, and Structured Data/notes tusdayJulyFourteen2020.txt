@@ -1,0 +1,171 @@
+import java.util.Ramdom;
+
+// Random Numbers and Arrays
+
+public class DiceRolling
+{
+	
+	public void simpleSimulate(int rolls){
+	 Random rand = new Random();
+	 int [] counts = new int [13];
+	 for(int k=0; k < rolls; k++){
+		int d1 = rand.nextInt(6) + 1;
+		int d2 = rand.nextInt(6) + 1;
+		counts[d1+d2] += 1;
+	 }
+	 for(int k=2; k <= 12; k++){
+		System.out.println(k + "'s=\t" + counts[k] + "\t" + 100.0 * counts[k] / rolls);
+	 }
+	 
+	}
+
+
+}
+
+// Counting with Arrays
+
+
+
+public String[] getCommon(){
+	 FileResource resource = new FileResource("data/common.txt");
+	 String[] common = new String[20];
+	 int index = 0;
+         for(String s : resource.words()){
+	  common[index] = s;
+	  index += 1;
+	 }
+	  return common;
+}
+
+public int indexOf(String[] list, String word){
+  for(int k=0; k < list.length; k++){
+	if(list[k].equals(words)){
+		return k;
+	}
+     }
+	return -1;
+}
+
+public void countWords(FileResource resource, String[] comon, int[] counts){
+	for(String word : resource.words()){
+		word = word.toLowerCase();
+		int index = indexOf(common, word);
+		if(index != 1){
+	   	  counts[idex] + =1;
+		}	
+	}
+
+}
+void countShakespeare(){
+	String([] plays = {"caesar.txt", "errors.txt", "hamlet.txt", 
+"likeit.txt", "macbeth.txt", "romeo.txt"};
+
+String[] common = getCommon();
+int[] counts = new int[common.length];
+for( int k=0; k < plays.length; k++){
+   FileResource resource = new FileResource("data/" + plays[k]); 
+   countWords(resource, common.counts);
+   System.out.println("done with " + plays[k]);
+}
+
+for(int k=0; k < common.length; k++){
+   System.out.println(common[k] + "\t" + counts[k]);
+}
+}
+
+
+// Developing an Algorithm
+
+// counting ocurrences with Code
+String alph = "abcdefghiklmopqrstuvwxyz";
+int[] counts = new int[26];
+for(int k=0; k < message.length(); k++){
+	char ch = Character.toLowerCase(message.chartAt(k));
+	int dex = alph.indexOf(ch);
+	if( dex != 1){
+		counts[dex] += 1;
+	}
+}
+
+
+
+// From Algorithm to Code
+
+public String decrypt(String enrypted){
+	CaesarCipher cc = new CaesarCipher();
+	int[] freqs = countLetters(encrypted);
+	int maxDex = maxIndex(freqs);
+	int dkey = maxDex -4;
+	if(maxDex < 4){
+	 dkey = 26 - (4- maxDex);
+
+	}
+	return cc.encrypt(encrypted, 26-dkey);
+}
+
+
+//
+
+public int maxIndex(int[] vals){
+	int maxDex = 0;
+	for(int k=0; k < vals.length; k++){
+		if(vals[k] > vals[maxDex]){
+		   maxDex = k;
+		}
+	}
+	return maxDex;
+}
+
+
+
+// Summary
+
+// Using arrays in java
+
+String[] names = new String[100];
+int[] counters = new int[2048];
+names[5] = "Zeus";
+counters[1223] = counters[123] + 1;
+
+
+// indexing Array Elements
+
+public int indexOf(String[] list, String word){
+  for(int k=0; k < list.length; k++){
+	if(list[k].equals(words)){
+		return k;
+	 }
+     }
+	return -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Assigment 1 Word lengths
+
+public void countWordLengths(FileResource resource, int[] counts){
+
+}
+
+///position[1 2 3 4 5 6 7 8 9 10]
+/// lenghs [0,1,2,3,4,5,6,7,8, 9]
+/// counts [2,1,3,5,4,6,8,9,5, 8]
+
+
+check first word length
+increase proper lengh value by 1
+check second word length
+increase proper lengh value by 1
+check third word length
+increase proper lengh value by 1
