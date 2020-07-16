@@ -9,6 +9,8 @@
 import edu.duke.*;
 import java.lang.StringBuilder;
 public class CaesarCipher {
+    
+    
       public String encrypt (String input , int key) {
       
             // make a StringBuilder with message (encrypted)
@@ -49,29 +51,24 @@ public class CaesarCipher {
    }
    
      public void testCaesar(){
-             int key =  15;
+             int key =  5;
             // FileResource fr = new FileResource();
             // String message = fr.asString();
-            String message = "At noon be in the conference room with your hat on for a surprise party. YELL LOUD!";
+            String message = "Hello andalucia mi querida ciudad";
             String encrypted = encrypt(message, key);
             System.out.println(encrypted);
-            // String decrypted = encrypt(encrypted, 26-key);
-            // System.out.println(decrypted);
+             String decrypted = encrypt(encrypted, 26-key);
+             System.out.println(decrypted);
    }
    
    
-   // public String encryptTwoKeys (String input, int key1, int key2){
-       // StringBuilder testing = new StringBuilder(input);
-       // return testing.toString();
-   // }
+  
    
    
    public String encryptTwoKeys (String input, int key1, int key2){
         StringBuilder encrypted = new StringBuilder(input);
-        char even = '+';
-        char odd = '*';
         
-        // Write down the alphabet
+         // Write down the alphabet
             String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             String lowerAlphabet = alphabet.toLowerCase();
             // compute the shifted alphabet with key 1
@@ -92,34 +89,38 @@ public class CaesarCipher {
             int idx = alphabet.indexOf(currChar);
             int lidx = lowerAlphabet.indexOf(currChar);
             
-           
-            
                 if(i % 2 == 0){
-                if (idx != -1 ){
-                // get the idx character of shifted alphabet (newChar)
-                newChar = shiftedAlphabet.charAt(idx);
-                // replace the ith character on encrypted with newChar
-                encrypted.setCharAt(i, newChar);
-            }
-            if(lidx != -1){
-               newChar = lshiftedAlphabet.charAt(lidx);
-               encrypted.setCharAt(i,newChar);
-            }
-                }else{
+                    // even numbers
+                    // when uppercase
                     if (idx != -1 ){
-                // get the idx character of shifted alphabet (newChar)
-                newChar = shiftedAlphabetTwo.charAt(idx);
-                // replace the ith character on encrypted with newChar
-                encrypted.setCharAt(i, newChar);
-            }
-            if(lidx != -1){
-               newChar = lshiftedAlphabetTwo.charAt(lidx);
-               encrypted.setCharAt(i,newChar);
-            }
+                    // get the idx character of shifted alphabet (newChar)
+                    newChar = shiftedAlphabet.charAt(idx);
+                    // replace the ith character on encrypted with newChar
+                    encrypted.setCharAt(i, newChar);
+                    }
+                    // when lowercase
+                    if(lidx != -1){
+                       newChar = lshiftedAlphabet.charAt(lidx);
+                       encrypted.setCharAt(i,newChar);
+                    }
+                }else{
+                    // odd numbers
+                    // when uppercase
+                    if (idx != -1 ){
+                    // get the idx character of shifted alphabet (newChar)
+                    newChar = shiftedAlphabetTwo.charAt(idx);
+                    // replace the ith character on encrypted with newChar
+                    encrypted.setCharAt(i, newChar);
+                    }
+                    // when lowercase
+                    if(lidx != -1){
+                    newChar = lshiftedAlphabetTwo.charAt(lidx);
+                    encrypted.setCharAt(i,newChar);
+                    }
                 }
             
         }
-        return encrypted.toString();
+            return encrypted.toString();
     }
     
     
