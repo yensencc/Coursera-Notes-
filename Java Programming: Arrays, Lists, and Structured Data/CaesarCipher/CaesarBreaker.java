@@ -51,7 +51,7 @@ public class CaesarBreaker {
     }
     
     public String decryptTwoKeys (String encrypted){
-        CaesarCipher cc = new CaesarCipher();
+        CaesarCipher cc = new CaesarCipher(18); // I added 18 just as a place holder, not sure what it does, since I was in work in progress
         String descryptedString = "";
         String firstHalf = halfOfString(encrypted, 0);
         String secHalf = halfOfString(encrypted, 1);
@@ -64,12 +64,12 @@ public class CaesarBreaker {
     }
     public String decrypt(String encrypted){
         
-        // instanciate a ceaser cipher object
-        CaesarCipher cc = new CaesarCipher();
+       
         int key = getKey(encrypted);
-        
+         // instanciate a ceaser cipher object
+        CaesarCipher cc = new CaesarCipher(key);
         // riverse the encryption using the found ramdom key
-        return cc.encrypt(encrypted, 26-key);
+        return cc.encrypt(encrypted);
     }
     
     public String halfOfString (String message, int start){
@@ -94,7 +94,7 @@ public class CaesarBreaker {
     
     public void tesDecrypt(){
        //CaesarCipher cc = new CaesarCipher();
-       // String e_message = cc.encrypt(message, 20);
+       // String e_message = cc.encrypt(message);
        // System.out.println("Encrypted message is " + e_message);
        String e_message = "qbylyypyl uhinbyl ufjbuvyn cm chpyhnyx sio zchx nby wuvfy gixylh jfyumy uhx uuuffyyffosuuu uhx qbs hin";
        String d_message = decrypt(e_message);
@@ -108,8 +108,8 @@ public class CaesarBreaker {
        //FileResource resource = new FileResource("data/smallHamlet.txt");
        //FileResource resource = new FileResource("data/wordsLotsOfEs.txt");
        String message = "whereever another alphabet is invented you find the cable modern please and aaalleelluyaaa and why not";
-       CaesarCipher cc = new CaesarCipher();
-       String e_message = cc.encrypt(message, 20);
+       CaesarCipher cc = new CaesarCipher(20);
+       String e_message = cc.encrypt(message);
        int key = getKey(e_message);
        System.out.println( "key of encrypted message is " + key  );
 
@@ -119,7 +119,7 @@ public class CaesarBreaker {
     
     public void testDecryptTwoKeys(){
           
-          FileResource fr = new FileResource("mysteryTwoKeysPractice.txt");
+          FileResource fr = new FileResource("mysteryTwoKeysQuiz.txt");
           String s  =  fr.asString();
           String d_message = decryptTwoKeys(s);
           System.out.println("Decrypted message is " + d_message);

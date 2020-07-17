@@ -10,19 +10,30 @@ import edu.duke.*;
 import java.lang.StringBuilder;
 public class CaesarCipher {
     
+
+        private String alphabet = "";
+        private String lowerAlphabet = "";
+        private String shiftedAlphabet = "";
+        private String lshiftedAlphabet = "";
+        private  int mainKey = 0;
     
-      public String encrypt (String input , int key) {
+      public CaesarCipher(int key){
+        // Write down the alphabet
+            alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            lowerAlphabet = alphabet.toLowerCase();
+            // compute the shifted alphabet
+            shiftedAlphabet = alphabet.substring(key) + alphabet.substring(0, key);
+            lshiftedAlphabet = lowerAlphabet.substring(key) + lowerAlphabet.substring(0, key);
+            mainKey = key;
+      }
+    
+      public String encrypt (String input ) {
       
             // make a StringBuilder with message (encrypted)
    
             StringBuilder encrypted = new StringBuilder (input);
             
-            // Write down the alphabet
-            String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            String lowerAlphabet = alphabet.toLowerCase();
-            // compute the shifted alphabet
-            String shiftedAlphabet = alphabet.substring(key) + alphabet.substring(0, key);
-            String lshiftedAlphabet = lowerAlphabet.substring(key) + lowerAlphabet.substring(0, key);
+            
             
             // count from 0 to  < length of encrupted, (call it i)
             for(int i = 0; i < encrypted.length(); i ++ ){
@@ -51,15 +62,68 @@ public class CaesarCipher {
    }
    
      public void testCaesar(){
-             int key =  5;
             // FileResource fr = new FileResource();
             // String message = fr.asString();
-            String message = "Hello andalucia mi querida ciudad";
-            String encrypted = encrypt(message, key);
+            String message = "Can you imagine life WITHOUT the internet AND computers in your pocket?";
+            String encrypted = encrypt(message);
             System.out.println(encrypted);
-             String decrypted = encrypt(encrypted, 26-key);
+             String decrypted = decrypt(encrypted);
              System.out.println(decrypted);
    }
+   
+   
+   public String decrypt(String input){
+        
+         // instanciate a ceaser cipher object
+        CaesarCipher cc = new CaesarCipher(26-mainKey);
+        // riverse the encryption using the found ramdom key
+        return cc.encrypt(input);
+    }
+    
+    
+    // public int getKey(String s){
+       
+        // int[] freqs = countLetters(s);
+        // int maxDex = maxIndex(freqs);
+        // int dkey = 0;
+        // if(maxDex < 4){
+            // dkey = 26 - ( 4 - maxDex );
+        // }else{
+            // dkey = maxDex - 4;
+        // }
+ 
+        // return dkey  ;
+    // }
+    
+    
+    // public int maxIndex(int[] vals){
+    // int maxDex = 0;
+        
+     // for(int k=0 ; k < vals.length; k++){
+         // if(vals[k] > vals[maxDex]){
+            // maxDex = k;
+            // }
+     // }
+     
+     // return maxDex;
+    // }
+    
+    
+    // public int[] countLetters(String message){
+        // String alph = "abcdefghijklmnopqrstuvwxyz";
+        // int[] counts = new int[26];
+        
+        // for(int k=0; k<message.length(); k++){
+            // char ch = Character.toLowerCase(message.charAt(k));
+            // int dex = alph.indexOf(ch);
+            // if (dex != -1){
+                // counts[dex] +=1;
+            // }
+        // }
+          // return counts;
+    // }
+    
+    
    
    
   

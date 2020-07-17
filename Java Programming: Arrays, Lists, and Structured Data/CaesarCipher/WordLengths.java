@@ -55,7 +55,7 @@ public class WordLengths {
     
     public void testCountWordLengths(){
         
-         FileResource resource = new FileResource("lotsOfWords.txt");
+         FileResource resource = new FileResource("manywords.txt");
          int numberOfWords = 0;
           for (String s : resource.words()) {
                numberOfWords += 1;
