@@ -1,0 +1,134 @@
+GlabLibs.Java
+
+
+
+makeStory method
+
+private String processWord(){
+	int first = w.indexOf("<");
+	int lat = w.indexOf(">", first);
+	if(first == -1 || last == -1){
+		return w;
+	}
+	String prefix = w.substring(0,first);
+	String
+}
+
+private void printOut(String s, int lineWidth){
+	int charsWritten = 0;
+}
+
+private ArrayList<String> adjectiveList;
+private ArrayList<String> nounList;
+private ArrayList<String> colorList;
+private ArrayList<String> countryList;
+private ArrayList<String> nameList;
+private ArrayList<String> animalList;
+private ArrayList<String> timeList;
+private ArrayList<String> verbList;
+private Random myRandom;
+
+private String getSubstitute(String label){
+	if(label.equals("country")){
+		return randomFrom(countryList);
+	}
+if(label.equals("color")){
+		return randomFrom(colorList);
+	}
+if(label.equals("noun")){
+		return randomFrom(nounList);
+	}
+if(label.equals("name")){
+		return randomFrom(nameList);
+	}
+if(label.equals("verb")){
+		return randomFrom(verbList);
+}
+
+// more code here
+}
+
+
+private String randomFrom(ArrayList<String> source){
+	int index = myRandom.nextInt(source.size());
+	return source.get(index);
+}
+
+private void initializeFromSource(String source){
+	adjectiveList = readIt(source"/adjective.txt");
+	nounList = readIt(source + "/noun.txt");
+	colorList = readIt(source + "/color.txt");
+	countryList = readIt(source + "/country.txt");
+	nameList = readIt(source + "/name.txt");
+	animalList = readIt(source + "/animal.txt");
+	timeList = readIt(source + "/timeFrame.txt");
+	verbList = readIt(source+ "/verb.txt");
+}
+
+
+
+
+
+
+
+// Updating findUnique using hashmaps
+
+public void findUnique(){
+	FileResource resource = new FileResource();
+	HashMap<String, Integer> map = new HashMap<String, Integer>();
+
+	for(String s: resource.words()){
+		s = s.toLowerCase();
+		int index = myWords.indexOf(s);
+		if(!map.containsKey(w)){
+			map.put(w,1);
+		}
+		else{
+		  map.put(w,map.get(w) + 1);
+		}
+	}
+
+}
+
+
+
+// Updating printWord using hashmaps
+
+
+public void printWord (){
+	for( String s :myMap.keySet()){
+		System.out.println(myMaps.get(s) + "\t" + s)
+	}
+
+}
+
+
+
+// updating initializeFronSource with a hashmap
+
+private void initializeFromSource(String source){
+	String[] labels = {"country", "noun", "animal","adjective", "name", "color", "timeframe"};
+for(String s : labels){
+ArrayList<String> list = readIt(source+ "/" + s + ".txt");
+
+myMap.put(s, list);
+}
+}
+
+
+
+
+// finding Nouns an Verbs anywhere
+File associates labels and replacement info
+
+// verb:http://glablibs.com/verbs.txt
+// noun:http://gladlibs.com/nouns-funny.txt
+// color:http://gladlibs.com/color.txt
+
+private void initializeFromSource(){
+	for(String s : myLabelSource.keySet()){
+		ArrayList<String> list = readIt(myLabelSource.get(s));
+myMap.put(s,list);
+	}
+}
+
