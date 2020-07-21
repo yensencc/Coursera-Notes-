@@ -86,8 +86,8 @@ public class CodonCount {
         + builtCodons.size() + " unique codons");
         System.out.println(" and the most common codon is " 
         + getMostCommonCodon() + " with count " +  builtCodons.get(getMostCommonCodon()));
-        System.out.println("Counts of codons between 1 and 5 inclusive are: " );
-        printCodonCounts(1,5);
+        System.out.println("Counts of codons between 6 and 6 inclusive are: " );
+        printCodonCounts(6,6);
       
     }
     
