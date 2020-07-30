@@ -1,0 +1,40 @@
+https://w.amazon.com/bin/view/Amazon_Technical_Academy/Self_Service_Courses/Course4/JavaProgrammingPostDuke/learning-materials/pass-by-value
+
+So repeat after me:
+
+Java is pass-by-value.
+
+(OK, once again... with feeling.)
+
+Java is pass-by-value.
+
+For primitives, you pass a copy of the actual value.
+
+For references to objects, you pass a copy of the reference (the remote control).
+
+You never pass the object. All objects are stored on the heap. Always.
+
+Now go have an extra big cup of coffee and write some code.
+
+
+#1 
+
+ANSWER: C
+
+
+
+#2
+ANSWER: B
+
+
+
+#3
+ANSWER: B
+
+
+
+#4
+
+ANSWER: C
+
+
