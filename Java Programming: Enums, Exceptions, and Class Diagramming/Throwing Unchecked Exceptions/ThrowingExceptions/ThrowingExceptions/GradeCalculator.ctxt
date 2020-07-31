@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=GradeCalculator
+comment1.params=numberOfSubjects
+comment1.target=void\ gradeEntryForStudent(int)
+comment1.text=\r\n\ You\ don't\ need\ to\ modify\ this\ method.\r\n\r\n\ You\ do\ not\ need\ to\ understand\ how\ Scanner\ or\ printf\ work.\r\n
+comment2.params=numberOfSubjects
+comment2.target=double[]\ getGrades(int)
+comment2.text=\r\n\ You\ don't\ need\ to\ modify\ this\ method.\r\n\r\n\ You\ do\ not\ need\ to\ understand\ how\ Scanner\ or\ printf\ work.\r\n
+comment3.params=grades
+comment3.target=double\ calculateFinalGrade(double[])
+comment3.text=\r\n\ You\ need\ to\ modify\ this\ method.\r\n\r\n\ What\ assumptions\ does\ the\ method\ make?\ How\ can\ you\ protect\ this\ method's\ assumptions\ so\ that\ it\ can\ either\r\n\ fulfill\ its\ purpose\ or\ loudly\ complain\ to\ the\ caller\ that\ something\ terrible\ could\ happen?\r\n
+numComments=4
