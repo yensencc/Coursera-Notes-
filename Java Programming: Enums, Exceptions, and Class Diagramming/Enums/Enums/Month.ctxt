@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Month
+comment0.text=\r\n\ An\ Enum\ representing\ the\ US\ months\ of\ the\ year.\r\n
+comment1.params=ordering
+comment1.target=Month(int)
+comment2.params=
+comment2.target=int\ getLength()
+comment3.params=numberOfMonths
+comment3.target=Month\ plus(int)
+comment3.text=\r\n\ Adds\ numberOfMonths\ to\ the\ current\ Month\ and\ returns\ what\ month\ it\ will\ then\ be.\r\n\ @param\ numberOfMonths\ the\ number\ of\ months\ to\ look\ ahead\r\n\ @return\ what\ month\ it\ will\ be\ numberOfMonths\ after\ the\ current\ month\r\n
+comment4.params=ordering
+comment4.target=int\ getDays(int)
+comment5.params=style
+comment5.target=java.lang.String\ getDisplayName(DisplayStyle)
+comment5.text=\r\n\ Return\ the\ name\ of\ the\ month\ in\ the\ requested\ style,\ either\ SHORT\ or\ default\ to\ LONG.\ For\ some\ months,\r\n\ SHORT\ may\ be\ equal\ to\ LONG.\r\n\ Ex\:\ A\ SHORT\ style\ would\ return\ 'Jan'\ and\ the\ LONG\ style\ would\ return\ 'January'\r\n\ @param\ style\ -\ the\ style\ the\ month\ should\ be\ returned\ in\r\n\ @return\ the\ display\ name\ of\ the\ current\ month\ according\ to\ the\ requested\ style.\r\n
+numComments=6

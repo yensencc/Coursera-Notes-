@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.target=DisplayStyle
+comment0.text=\r\n\ An\ enum\ representing\ display\ styles,\ where\ the\ SHORT\ style\ is\ an\ abbreviated\ version\ of\ the\ LONG\ style.\r\n
+numComments=1

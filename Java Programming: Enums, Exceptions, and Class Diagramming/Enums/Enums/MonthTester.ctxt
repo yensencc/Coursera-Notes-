@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=MonthTester
+comment0.text=\r\n\ This\ class\ will\ be\ used\ to\ write\ test\ methods\ that\ interact\ with\ the\ Month\ enum.\r\n
+comment1.params=
+comment1.target=void\ testGetLengthMethod()
+comment2.params=
+comment2.target=void\ testPlusMethod()
+comment3.params=
+comment3.target=void\ testGetDisplayNameMethod()
+comment4.params=
+comment4.target=void\ testNewMonthOrdering()
+numComments=5
